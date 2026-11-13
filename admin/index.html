@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>四海科技 · 网站后台</title><style>
+:root{--blue:#0b4f9c;--blue2:#1673d6;--org:#e8630a;--ink:#1b2430;--gry:#5b6a7a;--line:#e4eaf1;--bg:#f5f7fa}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC","WenQuanYi Micro Hei",Arial,sans-serif;color:var(--ink);line-height:1.75;background:#fff;-webkit-text-size-adjust:100%}
+a{color:var(--blue2);text-decoration:none}a:hover{color:var(--org)}
+img{max-width:100%}.wrap{max-width:1160px;margin:0 auto;padding:0 18px}
+.topbar{background:var(--blue);color:#dbe9ff;font-size:13px}.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:34px;padding-top:4px;padding-bottom:4px}
+.topbar b{color:#fff;font-weight:600}.lang a{border:1px solid #9dc2ee;border-radius:13px;padding:1px 11px;margin-left:6px;color:#fff;display:inline-block}.lang a.on{background:#fff;color:var(--blue);border-color:#fff}
+header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 12px rgba(11,79,156,.09)}
+.hin{display:flex;align-items:center;justify-content:space-between;height:66px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--blue);font-size:18px;letter-spacing:1px;flex-shrink:0}
+.logo .m{width:42px;height:42px;border-radius:9px;background:linear-gradient(135deg,#083d78,#2a92f0);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:0;font-weight:700}
+nav ul{display:flex;list-style:none;gap:2px;flex-wrap:wrap;justify-content:flex-end}nav a{display:block;padding:8px 11px;color:var(--ink);border-radius:6px;font-size:15px}nav a:hover,nav a.on{background:#eaf2fd;color:var(--blue)}
+#bug{display:none;background:none;border:0;font-size:27px;color:var(--blue);cursor:pointer;line-height:1}
+.hero{background:linear-gradient(120deg,#073468,#1673d6 58%,#2f9bf5);color:#fff;padding:60px 0 50px;text-align:center}
+.hero h1{font-size:36px;letter-spacing:8px;margin-bottom:8px;font-weight:700}.hero>p{opacity:.93;font-size:15px}.hero .en2{font-style:italic;opacity:.72;margin-top:4px;font-size:14px}.hero .btn{margin-top:20px}
+.btn{display:inline-block;background:var(--org);color:#fff;padding:10px 22px;border-radius:24px;font-size:15px;margin:5px}.btn:hover{background:#c9510a;color:#fff}.btn.gh{background:rgba(255,255,255,.14);border:1px solid #fff}
+section{padding:40px 0}h1{font-size:27px;color:var(--blue);margin-bottom:8px;line-height:1.4}h2{font-size:20px;color:var(--blue);margin:28px 0 12px;border-left:4px solid var(--org);padding-left:10px;line-height:1.4}h3{font-size:16px;margin-bottom:4px}h4{font-size:15px}
+.lead{color:var(--gry);margin-bottom:16px}.sub{color:var(--gry);font-size:14px;margin-top:-2px}.ct{margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}.four{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff;transition:.18s;display:block;color:inherit}.card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(11,79,156,.13);border-color:#bdd7f6;color:inherit}
+.card .ic{font-size:25px}.card h3{color:var(--blue);margin-top:4px;font-size:16px}.card p{color:var(--gry);font-size:13.5px;margin-top:4px}.card .n{font-size:12px;color:#93a2b3}
+.tags{margin-top:8px}.tags span{display:inline-block;background:#fff2e6;color:var(--org);border-radius:11px;padding:1px 9px;font-size:12px;margin:3px 4px 0 0}
+.bg{display:inline-block;background:#e8f6ec;color:#1a7f3c;border-radius:11px;padding:1px 9px;font-size:12px;margin-left:6px}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 4px}.cat{display:block;border:1px solid var(--line);border-top:4px solid var(--blue2);border-radius:12px;padding:14px;text-align:center;color:inherit;background:#fff}.cat:hover{box-shadow:0 10px 22px rgba(11,79,156,.12);color:inherit}.cat span{font-size:28px}.cat b{display:block;color:var(--blue);font-size:15px;margin-top:2px}.cat i{font-style:normal;font-size:12px;color:#93a2b3}
+.why div{background:var(--bg);border-radius:10px;padding:13px 15px;font-size:14.5px;border-left:3px solid var(--blue2)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center}.fact{background:linear-gradient(160deg,#eaf2fd,#fff);border:1px solid var(--line);border-radius:12px;padding:18px 8px}.fact b{display:block;font-size:23px;color:var(--blue)}.fact span{font-size:12.5px;color:var(--gry)}
+.crumb{font-size:13px;color:var(--gry);padding:14px 0 0}.crumb a{color:var(--gry)}
+.pd{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:start}
+.fig{width:100%;border:1px solid var(--line);border-radius:12px;background:var(--bg);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#9aa8b8;gap:8px;font-size:15px;text-align:center;padding:16px}.fig b{font-size:44px;font-weight:400}
+.spec{width:100%;border-collapse:collapse;font-size:14px}.spec td{border-bottom:1px solid var(--line);padding:7px 10px;vertical-align:top}.spec td:first-child{color:var(--gry);width:40%;background:#fafcff}
+ul.p li{list-style:none;padding:7px 0 7px 18px;border-bottom:1px dashed var(--line);font-size:14.5px;position:relative}ul.p li:before{content:"▸";position:absolute;left:0;color:var(--org)}
+.warn{background:#fff6e6;border:1px solid #f4d69a;color:#8a5a00;border-radius:8px;padding:10px 14px;font-size:13.5px}.ok{background:#eaf8ee;border:1px solid #a8dcbb;color:#166534;border-radius:8px;padding:10px 14px;font-size:13.5px}.err{background:#fdecec;border:1px solid #f3b6b6;color:#a12626;border-radius:8px;padding:10px 14px;font-size:13.5px}
+form .row{display:flex;gap:12px;flex-wrap:wrap}input,textarea,select{flex:1;min-width:190px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15px;font-family:inherit;color:var(--ink)}input:focus,textarea:focus,select:focus{outline:2px solid #cfe2fa;border-color:var(--blue2)}textarea{width:100%;height:96px;margin-top:10px;resize:vertical}label{font-size:13.5px;color:var(--gry);display:block;margin:10px 0 4px}
+.search{display:flex;gap:8px;margin:12px 0 18px;flex-wrap:wrap}.search input{flex:1;min-width:200px}
+footer{background:#0c2a4e;color:#c4d5e9;font-size:14px;padding:32px 0 18px;margin-top:34px}footer h4{color:#fff;margin-bottom:6px;font-size:15px}footer a{color:#a9c6ea}.cols{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:26px}footer ul.p li{border-color:#224a75}.copy{border-top:1px solid #224a75;margin-top:20px;padding-top:12px;font-size:12.5px;color:#8ba6c8}
+.hide{display:none!important}
+@media(max-width:900px){
+ .grid,.two,.pd,.cols{grid-template-columns:1fr}.cats{grid-template-columns:repeat(2,1fr)}.four,.facts{grid-template-columns:repeat(2,1fr)}
+ .topbar .wrap{font-size:12px;justify-content:space-between}#bug{display:block}
+ nav{position:fixed;top:0;right:0;bottom:0;width:260px;background:#fff;transform:translateX(106%);transition:.25s;box-shadow:-8px 0 24px rgba(0,0,0,.18);overflow:auto;padding:16px 0 50px;z-index:60}
+ nav.open{transform:none}nav ul{flex-direction:column;gap:0;justify-content:flex-start}nav a{padding:14px 18px;border-bottom:1px solid var(--line);font-size:16px}
+ #mask{position:fixed;inset:0;background:rgba(0,0,0,.36);display:none;z-index:55}#mask.on{display:block}
+ .hero{padding:40px 0 32px}.hero h1{font-size:25px;letter-spacing:3px}h1{font-size:22px}h2{font-size:18px}.hin{height:58px}.logo{font-size:16px}
+}
+
+body{background:#f5f7fa}#mask{display:none}
+.lay{display:flex;min-height:100vh}
+.side{width:222px;background:#0c2a4e;color:#c4d5e9;flex-shrink:0;padding:16px 0 40px}
+.side .br{color:#fff;font-weight:700;padding:0 18px 14px;font-size:16px;border-bottom:1px solid #224a75;margin-bottom:8px}
+.side a{display:block;color:#c4d5e9;padding:11px 18px;font-size:14.5px;cursor:pointer;border-left:3px solid transparent}
+.side a:hover{background:#123763;color:#fff}.side a.on{background:#164a86;color:#fff;border-left-color:#e8630a}
+.main{flex:1;min-width:0;padding:18px 22px 50px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border:1px solid #e4eaf1;border-radius:10px;padding:10px 14px;margin-bottom:16px;flex-wrap:wrap}
+.bar b{color:#0b4f9c}.pv button,.pv a{background:#eaf2fd;border:1px solid #cfe2fa;color:#0b4f9c;border-radius:7px;padding:6px 12px;font-size:13.5px;cursor:pointer;margin-left:6px;display:inline-block}
+.pv button.dg{background:#fdecec;border-color:#f3c0c0;color:#a12626}.pv button.pr{background:#e8630a;border-color:#e8630a;color:#fff}
+table.ad{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:10px;overflow:hidden}
+table.ad th,table.ad td{border-bottom:1px solid #e4eaf1;padding:8px 10px;text-align:left;vertical-align:top}
+table.ad th{background:#eef4fb;color:#0b4f9c;font-size:13px;white-space:nowrap}table.ad tr:hover td{background:#fafcff}
+.st{font-size:12px;border-radius:10px;padding:1px 8px}.st.n{background:#fff2e6;color:#e8630a}.st.y{background:#e8f6ec;color:#1a7f3c}
+.fld{margin-bottom:10px}.fld label{display:block;font-size:13px;color:#5b6a7a;margin-bottom:3px}.fld input,.fld textarea,.fld select{width:100%}
+.row2{display:flex;gap:12px;flex-wrap:wrap}.row2>div{flex:1;min-width:200px}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}.kpi div{background:#fff;border:1px solid #e4eaf1;border-top:3px solid #1673d6;border-radius:10px;padding:14px}.kpi b{display:block;font-size:24px;color:#0b4f9c}.kpi span{font-size:12.5px;color:#5b6a7a}
+.hint{font-size:12.5px;color:#8b98a8;margin-top:8px}
+#toast{position:fixed;right:18px;bottom:18px;background:#0c2a4e;color:#fff;padding:11px 18px;border-radius:9px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:99}#toast.on{opacity:1}
+.mask{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:80;padding:16px}
+.mask.on{display:flex}.dlg{background:#fff;border-radius:14px;padding:20px;width:100%;max-width:720px;max-height:88vh;overflow:auto}
+.dlg h3{color:#0b4f9c;margin-bottom:10px}
+@media(max-width:860px){
+ .side{position:fixed;left:0;top:0;bottom:0;transform:translateX(-106%);transition:.25s;z-index:70;width:230px}
+ .side.open{transform:none}.main{padding:12px 12px 40px}#mt{display:inline-block;background:#0b4f9c;color:#fff;border:0;border-radius:7px;padding:7px 11px;font-size:15px;margin-bottom:10px}
+ table.ad{font-size:13px}.kpi{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:861px){#mt{display:none}}
+</style></head><body>
+<div class="lay"><aside class="side" id="side"><div class="br">CNOFC 后台</div>
+<a data-v="dash" class="on">📊 数据概览</a><a data-v="msg">✉ 留言管理 <span id="nmsg"></span></a>
+<a data-v="prod">📦 产品管理</a><a data-v="cat">🗂 分类管理</a><a data-v="contact">☎ 联系方式</a>
+<a data-v="sys">⚙ 系统设置</a><a href="/index.html" target="_blank">↗ 查看网站</a>
+<a data-v="logout">🚪 退出登录</a></aside>
+<main class="main"><button id="mt" onclick="document.getElementById('side').classList.add('open')">☰ 菜单</button>
+<div id="view"></div></main></div>
+<div class="mask" id="dlgmask"><div class="dlg" id="dlg"></div></div><div id="toast"></div>
+<script src="/js/store.js"></script><script>
+var S=CNOFCStore, V='dash';
+if(!S.session()) location.href='/admin/login.html';
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.className='on';clearTimeout(t._h);t._h=setTimeout(function(){t.className=''},2200)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function closeDlg(){document.getElementById('dlgmask').className='mask'}
+function openDlg(h){document.getElementById('dlg').innerHTML=h;document.getElementById('dlgmask').className='mask on'}
+document.getElementById('dlgmask').addEventListener('click',function(e){if(e.target===this)closeDlg()});
+function go(v){
+ if(v==='logout'){S.logout();location.href='/admin/login.html';return}
+ V=v;Array.prototype.forEach.call(document.querySelectorAll('.side a[data-v]'),function(a){a.className=a.getAttribute('data-v')===v?'on':''});
+ if(window.innerWidth<=860)document.getElementById('side').className='';
+ ({dash:renderDash,msg:renderMsg,prod:renderProd,cat:renderCat,contact:renderContact,sys:renderSys}[v]||renderDash)();
+}
+Array.prototype.forEach.call(document.querySelectorAll('.side a[data-v]'),function(a){a.onclick=function(){go(a.getAttribute('data-v'))}});
+function bar(extra){return '<div class="bar"><b>'+({dash:'数据概览',msg:'留言管理',prod:'产品管理',cat:'分类管理',contact:'联系方式',sys:'系统设置'}[V])+'</b><span class="pv">'+(extra||'')+'</span></div>'}
+function badge(n){return n?' <span class="st n">'+n+'</span>':''}
+/* ---------- 概览 ---------- */
+function renderDash(){
+ var d=S.dump(), ms=S.messages(), un=ms.filter(function(m){return !m.read}).length;
+ var h=bar('<button onclick="go(\'prod\')">管理产品</button><button onclick="go(\'msg\')">查看留言</button>');
+ h+='<div class="kpi"><div><b>'+ms.length+'</b><span>留言总数</span></div><div><b>'+un+'</b><span>未读留言</span></div><div><b>'+d.products.length+'</b><span>产品型号</span></div><div><b>'+d.cats.length+'</b><span>产品分类</span></div></div>';
+ var st=S.syncState();
+ h+='<div class="ok">当前数据来源：'+(d.source==='remote'?'云端 Worker（全站可见）':d.source==='local'?'本浏览器本地修改':'站点内置默认数据')+'。'+(st.url?'Worker 已配置。':'未配置 Worker，改动只在本机生效。')+'</div>';
+ h+='<h2>最近留言</h2>';
+ if(!ms.length){h+='<p class="sub">暂无留言。</p>'}
+ else{h+='<table class="ad"><tr><th>时间</th><th>姓名</th><th>联系方式</th><th>型号</th><th>内容</th><th>状态</th></tr>'+
+  ms.slice().sort(function(a,b){return (b.at||0)-(a.at||0)}).slice(0,5).map(function(m){return '<tr><td>'+fmt(m.at)+'</td><td>'+esc(m.name)+'</td><td>'+esc(m.phone)+'</td><td>'+esc(m.product||'-')+'</td><td>'+esc((m.msg||'').slice(0,40))+'</td><td>'+(m.read?'<span class="st y">已读</span>':'<span class="st n">未读</span>')+'</td></tr>'}).join('')+'</table>'}
+ h+='<h2>快捷操作</h2><ul class="p"><li>修改产品、联系方式后，前台页面会立即反映改动（同一浏览器）。</li><li>要让所有访客都看到改动，请在「系统设置」填写 Cloudflare Worker 地址（README 有完整代码）。</li><li>留言同样只在本地保存；配置 Worker 后自动同步到云端。</li></ul>';
+ document.getElementById('view').innerHTML=h;
+}
+function fmt(t){if(!t)return '-';var d=new Date(t);function z(n){return n<10?'0'+n:n}
+ return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())+' '+z(d.getHours())+':'+z(d.getMinutes())}
+/* ---------- 留言 ---------- */
+function renderMsg(){
+ var ms=S.messages().slice().sort(function(a,b){return (b.at||0)-(a.at||0)});
+ var h=bar('<button onclick="S.seedDemo();go('msg');toast('已插入 2 条演示留言')">插入演示</button><button onclick="exportMsg()">导出 JSON</button><button class="dg" onclick="clearMsg()">清空留言</button>');
+ if(!ms.length){h+='<p class="sub">还没有留言。可用「插入演示」看效果。</p>'}
+ else{h+='<table class="ad"><tr><th>时间</th><th>姓名</th><th>电话/微信</th><th>公司</th><th>型号</th><th>需求</th><th>状态</th><th>操作</th></tr>'+
+  ms.map(function(m){return '<tr'+(m.read?'':' style="background:#fff8ef"')+'><td>'+fmt(m.at)+'</td><td>'+esc(m.name)+'</td><td>'+esc(m.phone)+'</td><td>'+esc(m.company||'-')+'</td><td>'+esc(m.product||'-')+'</td><td style="max-width:280px">'+esc(m.msg||'')+'</td><td>'+(m.read?'<span class="st y">已读</span>':'<span class="st n">未读</span>')+'</td><td><button onclick="setRead(''+m.id+'','+(m.read?0:1)+')">'+(m.read?'标未读':'标已读')+'</button> <button class="dg" onclick="delMsg(''+m.id+'')">删除</button></td></tr>'}).join('')+'</table>'}
+ document.getElementById('view').innerHTML=h;
+}
+function seedDemoBtn(){S.seedDemo();go('msg');toast('已插入 2 条演示留言')}
+function setRead(id,v){S.setRead(id,!!v);go('msg');toast(v?'已标为已读':'已标为未读')}
+function delMsg(id){if(!confirm('确定删除这条留言？'))return;S.delMessage(id);go('msg');toast('已删除')}
+function clearMsg(){if(!confirm('清空全部留言？此操作不可恢复。'))return;S.clearMessages();go('msg');toast('留言已清空')}
+function exportMsg(){var b=new Blob([JSON.stringify(S.messages(),null,2)],{type:'application/json'});
+ var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='cnofc-messages.json';a.click();toast('已导出')}
+/* ---------- 产品 ---------- */
+function renderProd(){
+ var d=S.dump();
+ var h=bar('<button class="pr" onclick="editProd()">＋ 新增产品</button><button onclick="go('cat')">分类管理</button>');
+ h+='<p class="hint">共 '+d.products.length+' 个型号。前台产品中心、分类页与详情页都读取这里的数据。</p>';
+ d.cats.forEach(function(c){
+  var list=d.products.filter(function(p){return p.cat===c.key});
+  h+='<h2>'+esc(c.icon||'•')+' '+esc(c.zh)+' / '+esc(c.en)+' <span class="sub">('+list.length+')</span></h2>';
+  if(!list.length){h+='<p class="sub">该分类暂无产品。</p>';return}
+  h+='<table class="ad"><tr><th>型号</th><th>中文名称</th><th>English</th><th>标签</th><th>RoHS</th><th>操作</th></tr>'+
+   list.map(function(p){return '<tr><td><b>'+esc(p.model)+'</b><br><span class="sub">'+esc(p.slug)+'</span></td><td>'+esc(p.zh)+'</td><td>'+esc(p.en)+'</td><td>'+esc((p.tags||[]).join('、'))+'</td><td>'+(p.rohs?'<span class="st y">是</span>':'<span class="st n">否</span>')+'</td><td><button onclick="editProd(''+p.slug+'')">编辑</button> <button class="dg" onclick="delProd(''+p.slug+'')">删除</button></td></tr>'}).join('')+'</table>';
+ });
+ document.getElementById('view').innerHTML=h;
+}
+function editProd(slug){
+ var d=S.dump(), p=slug?d.products.filter(function(x){return x.slug===slug})[0]:null;
+ var isNew=!p;
+ p=p||{cat:(d.cats[0]||{}).key,slug:'',model:'',zh:'',en:'',summary:'',enSummary:'',desc:[],specs:[],tags:[],img:'',rohs:true};
+ var opts=d.cats.map(function(c){return '<option value="'+c.key+'"'+(c.key===p.cat?' selected':'')+'>'+esc(c.zh+' / '+c.en)+'</option>'}).join('');
+ var h='<h3>'+(isNew?'新增产品':'编辑 '+esc(p.model))+'</h3>'+
+ '<div class="row2"><div class="fld"><label>所属分类</label><select id="f_cat">'+opts+'</select></div>'+
+ '<div class="fld"><label>网址标识 slug（英文小写，短横线分隔；留空自动生成）</label><input id="f_slug" value="'+esc(p.slug)+'" placeholder="如 f118p"'+(isNew?'':' readonly')+'></div></div>'+
+ '<div class="row2"><div class="fld"><label>型号（中文站显示）</label><input id="f_model" value="'+esc(p.model)+'" placeholder="如 F118P / F118B"></div>'+
+ '<div class="fld"><label>中文名称</label><input id="f_zh" value="'+esc(p.zh)+'"></div></div>'+
+ '<div class="fld"><label>English name</label><input id="f_en" value="'+esc(p.en)+'"></div>'+
+ '<div class="fld"><label>中文一句话简介</label><input id="f_sum" value="'+esc(p.summary)+'"></div>'+
+ '<div class="fld"><label>English summary</label><input id="f_esum" value="'+esc(p.enSummary)+'"></div>'+
+ '<div class="fld"><label>产品特点（每行一条）</label><textarea id="f_desc" style="height:120px">'+esc((p.desc||[]).join('\n'))+'</textarea></div>'+
+ '<div class="fld"><label>技术参数（每行一条，写「名称：数值」）</label><textarea id="f_spec" style="height:110px">'+esc((p.specs||[]).join('\n'))+'</textarea></div>'+
+ '<div class="row2"><div class="fld"><label>标签（逗号分隔）</label><input id="f_tags" value="'+esc((p.tags||[]).join(','))+'"></div>'+
+ '<div class="fld"><label>图片地址（留空显示占位图）</label><input id="f_img" value="'+esc(p.img||'')+'" placeholder="images/xxx.jpg"></div></div>'+
+ '<div class="fld"><label><input type="checkbox" id="f_rohs" style="width:auto;min-width:0"'+(p.rohs?' checked':'')+'> 满足 RoHS</label></div>'+
+ '<p><button class="btn" onclick="saveProd('+(isNew?'null':"'"+p.slug+"'")+')">保存并同步</button> <button onclick="closeDlg()">取消</button></p>'+
+ '<p class="hint">保存后前台立即生效；访客端要看到改动需配置 Worker。</p>';
+ openDlg(h);
+}
+function lines(id){return document.getElementById(id).value.split(/\r?\n/).map(function(s){return s.trim()}).filter(Boolean)}
+function saveProd(old){
+ var g=function(id){return document.getElementById(id).value.trim()};
+ var sl=g('f_slug')||g('f_model').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||('p'+Date.now().toString(36));
+ var o={cat:g('f_cat'),slug:sl,model:g('f_model'),zh:g('f_zh'),en:g('f_en'),summary:g('f_sum'),enSummary:g('f_esum'),
+  desc:lines('f_desc'),specs:lines('f_spec'),tags:g('f_tags').split(/[,，]/).map(function(s){return s.trim()}).filter(Boolean),
+  img:g('f_img'),rohs:document.getElementById('f_rohs').checked};
+ if(!o.model||!o.zh){alert('型号和中文名称必填');return}
+ var r=old?S.updateProduct(old,o):S.addProduct(o);
+ if(!r.ok){alert(r.msg);return}
+ closeDlg();go('prod');toast(old?'已更新 '+o.model:'已新增 '+o.model);
+}
+function delProd(sl){var p=S.dump().products.filter(function(x){return x.slug===sl})[0];
+ if(!confirm('删除产品「'+(p?p.model:sl)+'」？前台对应页面将不再生成。'))return;S.delProduct(sl);go('prod');toast('已删除')}
+/* ---------- 分类 ---------- */
+function renderCat(){
+ var d=S.dump();
+ var h=bar('<button class="pr" onclick="editCat()">＋ 新增分类</button>');
+ h+='<table class="ad"><tr><th>标识 key</th><th>中文 / English</th><th>图标</th><th>中文描述</th><th>English</th><th>产品数</th><th>操作</th></tr>'+
+ d.cats.map(function(c){return '<tr><td><b>'+esc(c.key)+'</b></td><td>'+esc(c.zh)+'<br><span class="sub">'+esc(c.en)+'</span></td><td style="font-size:22px">'+(c.icon||'•')+'</td><td style="max-width:260px">'+esc(c.desc_zh)+'</td><td style="max-width:260px">'+esc(c.desc_en)+'</td><td>'+d.products.filter(function(p){return p.cat===c.key}).length+'</td><td><button onclick="editCat(''+c.key+'')">编辑</button> '+(d.products.filter(function(p){return p.cat===c.key}).length?'':'<button class="dg" onclick="delCat(''+c.key+'')">删除</button>')+'</td></tr>'}).join('')+'</table>';
+ document.getElementById('view').innerHTML=h;
+}
+function editCat(k){
+ var d=S.dump(), c=k?d.cats.filter(function(x){return x.key===k})[0]:null, isNew=!c;
+ c=c||{key:'',zh:'',en:'',desc_zh:'',desc_en:'',icon:'•'};
+ var h='<h3>'+(isNew?'新增分类':'编辑分类 '+esc(c.zh))+'</h3>'+
+ '<div class="row2"><div class="fld"><label>key（英文小写，对应网址 /products/key/）</label><input id="c_key" value="'+esc(c.key)+'"'+(isNew?'':' readonly')+'></div>'+
+ '<div class="fld"><label>图标（一个 emoji）</label><input id="c_icon" value="'+esc(c.icon)+'"></div></div>'+
+ '<div class="row2"><div class="fld"><label>中文名称</label><input id="c_zh" value="'+esc(c.zh)+'"></div><div class="fld"><label>English</label><input id="c_en" value="'+esc(c.en)+'"></div></div>'+
+ '<div class="fld"><label>中文描述</label><input id="c_dz" value="'+esc(c.desc_zh)+'"></div>'+
+ '<div class="fld"><label>English description</label><input id="c_de" value="'+esc(c.desc_en)+'"></div>'+
+ '<p><button class="btn" onclick="saveCat('+(isNew?'null':"'"+c.key+"'")+')">保存</button> <button onclick="closeDlg()">取消</button></p>';
+ openDlg(h);
+}
+function saveCat(old){var g=function(id){return document.getElementById(id).value.trim()};
+ var o={key:g('c_key'),zh:g('c_zh'),en:g('c_en'),desc_zh:g('c_dz'),desc_en:g('c_de'),icon:g('c_icon')||'•'};
+ if(!o.key||!o.zh){alert('key 和中文名称必填');return}
+ var r=old?S.updateCat(old,o):S.addCat(o);if(!r.ok){alert(r.msg);return}
+ closeDlg();go('cat');toast('分类已保存')}
+function delCat(k){if(!confirm('删除分类 '+k+'？'))return;S.delCat(k);go('cat');toast('已删除')}
+/* ---------- 联系方式 ---------- */
+function renderContact(){
+ var c=S.dump().contact;
+ var f=function(id,l,v){return '<div class="fld"><label>'+l+'</label><input id="'+id+'" value="'+esc(v==null?'':v)+'"></div>'};
+ var h=bar('<button class="pr" onclick="saveContact()">保存联系方式</button>');
+ h+='<div class="two"><div class="card"><h3>热线</h3>'+f('k_hot','24 小时综合服务热线',c.hotline)+'</div>';
+ [['hq','绵阳总部'],['cd','成都办事处'],['dg','东莞办事处']].forEach(function(x){
+  var o=c[x[0]]||{};
+  h+='<div class="card"><h3>'+x[1]+'</h3>'+f('k_'+x[0]+'_zh','名称（中文）',o.zh)+f('k_'+x[0]+'_en','Name (EN)',o.en)+
+   f('k_'+x[0]+'_tel','电话',o.tel)+f('k_'+x[0]+'_telen','Tel (EN)',o.tel_en)+f('k_'+x[0]+'_fax','传真',o.fax)+'</div>'});
+ h+='<div class="card"><h3>微信</h3>'+f('k_wx','中文（顿号分隔）',(c.wechat||[]).join('、'))+f('k_wxen','English (comma separated)',(c.wechat_en||[]).join(', '))+'</div>';
+ h+='<div class="card"><h3>QQ</h3><table class="ad" style="border:0"><tr><th>号码</th><th>中文说明</th><th>EN</th><th></th></tr>'+
+  (c.qq||[]).map(function(q,i){return '<tr><td><input data-qq="'+i+'" data-k="n" value="'+esc(q[0])+'"></td><td><input data-qq="'+i+'" data-k="z" value="'+esc(q[1])+'"></td><td><input data-qq="'+i+'" data-k="e" value="'+esc(q[2])+'"></td><td><button class="dg" onclick="this.closest('tr').remove()">删</button></td></tr>'}).join('')+
+  '</table><button onclick="addQQ()">＋ 添加 QQ</button></div>';
+ h+='<div class="card"><h3>邮箱</h3><table class="ad" style="border:0"><tr><th>地址</th><th>中文说明</th><th>EN</th><th></th></tr>'+
+  (c.email||[]).map(function(e,i){return '<tr><td><input data-em="'+i+'" data-k="a" value="'+esc(e[0])+'"></td><td><input data-em="'+i+'" data-k="z" value="'+esc(e[1])+'"></td><td><input data-em="'+i+'" data-k="e" value="'+esc(e[2]||'')+'"></td><td><button class="dg" onclick="this.closest('tr').remove()">删</button></td></tr>'}).join('')+
+  '</table><button onclick="addEM()">＋ 添加邮箱</button></div></div>'+
+ '<p style="margin-top:14px"><button class="btn" onclick="saveContact()">保存联系方式</button></p>'+
+ '<p class="hint">警示语、页脚版权文案可在「系统设置」里一并修改。</p>';
+ document.getElementById('view').innerHTML=h;
+}
+function addQQ(){var t=document.querySelector('[data-qq]').closest('table').tBodies[0];
+ var i=t.rows.length;var tr=document.createElement('tr');
+ tr.innerHTML='<td><input data-qq="'+i+'" data-k="n" placeholder="QQ 号"></td><td><input data-qq="'+i+'" data-k="z" placeholder="中文"></td><td><input data-qq="'+i+'" data-k="e" placeholder="EN"></td><td><button class="dg" onclick="this.closest('tr').remove()">删</button></td>';t.appendChild(tr)}
+function addEM(){var t=document.querySelector('[data-em]').closest('table').tBodies[0];
+ var i=t.rows.length;var tr=document.createElement('tr');
+ tr.innerHTML='<td><input data-em="'+i+'" data-k="a" placeholder="name@cnofc.net"></td><td><input data-em="'+i+'" data-k="z" placeholder="中文"></td><td><input data-em="'+i+'" data-k="e" placeholder="EN"></td><td><button class="dg" onclick="this.closest('tr').remove()">删</button></td>';t.appendChild(tr)}
+function saveContact(){var g=function(id){return document.getElementById(id).value.trim()};
+ var c=S.dump().contact, o=JSON.parse(JSON.stringify(c));
+ o.hotline=g('k_hot');
+ ['hq','cd','dg'].forEach(function(k){o[k].zh=g('k_'+k+'_zh');o[k].en=g('k_'+k+'_en');o[k].tel=g('k_'+k+'_tel');o[k].tel_en=g('k_'+k+'_telen');o[k].fax=g('k_'+k+'_fax')});
+ o.wechat=g('k_wx').split(/[、,，]/).map(function(s){return s.trim()}).filter(Boolean);
+ o.wechat_en=g('k_wxen').split(/[,，]/).map(function(s){return s.trim()}).filter(Boolean);
+ var qq=[],em=[];
+ Array.prototype.forEach.call(document.querySelectorAll('[data-qq]'),function(el){var i=el.getAttribute('data-qq'),k=el.getAttribute('data-k');qq[i]=qq[i]||[];qq[i][k==='n'?0:k==='z'?1:2]=el.value.trim()});
+ Array.prototype.forEach.call(document.querySelectorAll('[data-em]'),function(el){var i=el.getAttribute('data-em'),k=el.getAttribute('data-k');em[i]=em[i]||[];em[i][k==='a'?0:k==='z'?1:2]=el.value.trim()});
+ o.qq=(qq||[]).filter(function(x){return x&&x[0]});o.email=(em||[]).filter(function(x){return x&&x[0]});
+ var r=S.saveContact(o);if(!r.ok){alert(r.msg);return}
+ toast('联系方式已保存')}
+/* ---------- 系统 ---------- */
+function renderSys(){
+ var s=S.settings(), d=S.dump();
+ var h=bar('<button class="pr" onclick="saveSys()">保存设置</button>');
+ h+='<div class="two"><div class="card"><h3>管理员密码</h3>'+
+ '<div class="fld"><label>当前密码</label><input type="password" id="s_old"></div>'+
+ '<div class="fld"><label>新密码（至少 6 位）</label><input type="password" id="s_new"></div>'+
+ '<div class="fld"><label>再输一次新密码</label><input type="password" id="s_new2"></div></div>'+
+ '<div class="card"><h3>云端同步（Cloudflare Worker）</h3>'+
+ '<div class="fld"><label>Worker 地址，例如 https://cnofc-api.xxx.workers.dev</label><input id="s_url" value="'+esc(s.workerUrl||'')+'" placeholder="留空则只用本地存储"></div>'+
+ '<div class="fld"><label>访问口令（与 Worker 里的 TOKEN 一致）</label><input type="password" id="s_tok" value="'+esc(s.workerToken||'')+'"></div>'+
+ '<p><button onclick="testWorker()">测试连接并上传当前数据</button></p>'+
+ '<p class="hint">配置后：后台改动写入云端，所有访客都能看到；前台留言直接进云端。未配置时仅本浏览器生效。部署代码见压缩包 README 第四节。</p></div>'+
+ '<div class="card"><h3>页脚与警示语</h3>'+
+ '<div class="fld"><label>免责提示（中文）</label><input id="s_disc" value="'+esc(s.discZh||'')+'"></div>'+
+ '<div class="fld"><label>警示语（中文）</label><input id="s_warn" value="'+esc(s.warnZh||'')+'"></div></div>'+
+ '<div class="card"><h3>数据维护</h3>'+
+ '<p><button onclick="exportAll()">导出全站数据 JSON</button> <button onclick="document.getElementById('imp').click()">导入 JSON</button></p>'+
+ '<input type="file" id="imp" accept=".json" class="hide" onchange="importAll(this)">'+
+ '<p><button class="dg" onclick="resetAll()">恢复站点默认数据</button></p>'+
+ '<p class="hint">导入/恢复会覆盖当前数据；建议先导出备份。数据来源：'+(d.source==='remote'?'云端':d.source==='local'?'本地':'默认')+'。</p></div></div>'+
+ '<p style="margin-top:14px"><button class="btn" onclick="saveSys()">保存设置</button></p>';
+ document.getElementById('view').innerHTML=h;
+}
+function saveSys(){var g=function(id){return document.getElementById(id).value.trim()};
+ var s=S.settings();s.workerUrl=g('s_url');s.workerToken=g('s_tok');s.discZh=g('s_disc');s.warnZh=g('s_warn');
+ var n=g('s_new'),n2=g('s_new2');
+ if(n||n2||g('s_old')){var r=S.changePwd(g('s_old'),n,n2);if(!r.ok){alert(r.msg);return}}
+ S.saveSettings(s);toast('设置已保存')}
+function testWorker(){var g=function(id){return document.getElementById(id).value.trim()};
+ S.saveSettings({workerUrl:g('s_url'),workerToken:g('s_tok')});
+ S.pushRemote(function(r){toast(r.ok?'云端连接正常，数据已上传':'连接失败：'+r.msg+'（检查地址与口令）')})}
+function exportAll(){var b=new Blob([JSON.stringify(S.dump(),null,2)],{type:'application/json'});
+ var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='cnofc-data.json';a.click();toast('已导出')}
+function importAll(el){var f=el.files[0];if(!f)return;var r=new FileReader();
+ r.onload=function(){try{var o=JSON.parse(r.result);var x=S.importAll(o);toast(x.ok?'导入成功':'导入失败：'+x.msg);go('dash')}catch(e){alert('文件不是合法 JSON')}};r.readAsText(f)}
+function resetAll(){if(!confirm('恢复为站点默认数据？本地改动与本地留言将丢失。'))return;S.resetAll();go('dash');toast('已恢复默认数据')}
+/* 启动 */
+var _n=S.messages().filter(function(m){return !m.read}).length;
+document.getElementById('nmsg').innerHTML=_n?' <span class="st n">'+_n+'</span>':'';
+if(/msie|trident/i.test(navigator.userAgent))alert('建议使用 Chrome / Edge 新版浏览器使用后台');
+</script></body></html>
